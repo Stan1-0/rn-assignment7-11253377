@@ -5,11 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 function Clothing() {
   return (
     <SafeAreaView>
-        <View style={{flex: 1,padding: 16}}>
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Clothing</Text>
+      <View style={{ flex: 1, padding: 16 }}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <Text>Clothing</Text>
         </View>
-        </View>
+      </View>
     </SafeAreaView>
   );
 }

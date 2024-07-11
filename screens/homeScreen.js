@@ -1,28 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, FlatList, ActivityIndicator } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDrawerStatus } from "@react-navigation/drawer";
 import ProductCard from "../components/productCard";
+import Menu from "../components/menu";
 
 const Home = ({ navigation }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedItems, setSelectedItems] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchSelectedItems = async () => {
-      try {
-        const storedItems = await AsyncStorage.getItem('@selectedItems');
-        if (storedItems) {
-          setSelectedItems(JSON.parse(storedItems));
-        }
-      } catch (error) {
-        console.error("Failed to retrieve selected items:", error);
-      }
-    };
-    fetchSelectedItems();
-  }, []);
-
+ 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -56,19 +44,20 @@ const Home = ({ navigation }) => {
     );
 }
 
-  const toggleSelection = async (itemId) => {
-    let updatedItems = selectedItems.includes(itemId)
-      ? selectedItems.filter(id => id !== itemId)
-      : [...selectedItems, itemId];
-    try {
-      await AsyncStorage.setItem('@selectedItems', JSON.stringify(updatedItems));
-      setSelectedItems(updatedItems);
-    } catch (error) {
-      console.error("Failed to update selected items:", error);
-    }
-  };
-
-  const isDrawerOpen = useDrawerStatus();
+const handleAddToCart = async (product) => {
+  try {
+    const storedCart = await AsyncStorage.getItem('cart');
+    let cart = storedCart ? JSON.parse(storedCart) : [];
+    cart.push(product);
+    await AsyncStorage.setItem('cart', JSON.stringify(cart));
+    console.log('Added to cart:', product);
+    Alert.alert('Success', 'Product added to cart');
+  } catch (error) {
+    console.error('Error adding to cart:', error);
+    Alert.alert('Error', 'Could not add product to cart');
+  }
+};
+ 
 
   const checkout = () => {
     navigation.navigate("Checkout", { items: selectedItems });
@@ -79,9 +68,12 @@ const Home = ({ navigation }) => {
       <ScrollView style={styles.scrollViewContainer}>
         <View style={styles.container}>
           <View style={styles.header}>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.toggleDrawer()}>
-              <Image source={require('../assets/Menu.png')}/>
-            </TouchableOpacity>
+          <TouchableOpacity onPress={() => setIsMenuOpen(!isMenuOpen)}>
+        <Image
+          source={require("../assets/Menu.png")}
+          s
+        />
+      </TouchableOpacity>
             <Image source={require('../assets/Logo.png')} />
             <View style={styles.icons}>
               <TouchableOpacity style={styles.button}>
@@ -91,6 +83,7 @@ const Home = ({ navigation }) => {
                 <Image source={require('../assets/shoppingBag.png')} />
               </TouchableOpacity>
             </View>
+            <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
           </View>
           <View style={styles.section}>
             <Text style={styles.subtitle}>OUR STORY</Text>
@@ -105,10 +98,12 @@ const Home = ({ navigation }) => {
           </View>
           <FlatList
             data={products}
-            renderItem={renderItem}
             keyExtractor={item => item.id.toString()}
             numColumns={2}
             columnWrapperStyle={styles.row}
+            renderItem={({item}) => (
+              <ProductCard/>
+            )}
           />
         </View>
       </ScrollView>

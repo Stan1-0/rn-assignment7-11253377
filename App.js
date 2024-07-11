@@ -1,17 +1,18 @@
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import Home from './screens/HomeScreen';
+import Store from "./screens/StoreScreen";
+import Locations from "./screens/LocationScreen";
+import Blog from "./screens/BlogScreen";
+import Jewelery from "./screens/JeweleryScreen";
+import Electronic from "./screens/ElectronicScreen";
+import Clothing from "./screens/ClothingScreen";
+import Checkout from "./screens/CheckoutScreen";
 
-import Home from './screens/homeScreen';
-import Store from "./screens/storeScreen";
-import Locations from "./screens/locationScreen";
-import Blog from "./screens/blogScreen";
-import Jewelery from "./screens/jeweleryScreen";
-import Electronic from "./screens/electronicScreen";
-import Clothing from "./screens/clothingScreen";
-import Checkout from "./screens/checkoutScreen";
+const Stack = createNativeStackNavigator();
 
-const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>

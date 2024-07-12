@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect,} from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView, ScrollView, FlatList, ActivityIndicator } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ProductCard from "../components/productCard";
@@ -102,7 +102,12 @@ const handleAddToCart = async (product) => {
             numColumns={2}
             columnWrapperStyle={styles.row}
             renderItem={({item}) => (
-              <ProductCard/>
+              <ProductCard
+              image={item.image}
+              name={item.title}
+              description={item.description}
+              price={item.price}
+              />
             )}
           />
         </View>

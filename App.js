@@ -1,34 +1,81 @@
-import React from "react";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from 'react';
 
-import Home from './screens/HomeScreen';
-import Store from "./screens/StoreScreen";
-import Locations from "./screens/LocationScreen";
-import Blog from "./screens/BlogScreen";
-import Jewelery from "./screens/JeweleryScreen";
-import Electronic from "./screens/ElectronicScreen";
-import Clothing from "./screens/ClothingScreen";
-import Checkout from "./screens/CheckoutScreen";
+
+// Screens
+import ProductsScreen from "./Screens/productsScreen"
+import Checkout from "./Screens/checkoutScreen";
+import ElectronicScreen from "./Screens/ElectronicScreen";
+import JewelleryScreen from "./Screens/JewelleryScreen";
+import LocationsScreen from "./Screens/LocationsScreen";
+import ClothingScreen from "./Screens/ClothingScreen";
+import BlogScreen from "./Screens/BlogScreen";
+import StoreScreen from "./Screens/StoreScreen";
+import Productdetail from "./Screens/ProductdetailScreen";
+
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+function App() {
+
   return (
     <NavigationContainer>
-     <Stack.Navigator initialRouteName="Home">
-      <>
-        <Stack.Screen name= "Home" component={Home} options={{headerShown:false}}/>
-        <Stack.Screen name="Store" component={Store} options={{ headerShown: false }}/>
-        <Stack.Screen name="Checkout" component={Checkout} options={{ headerShown: false }}/>
-        <Stack.Screen name="Locations" component={Locations} options={{ headerShown: false }} />
-        <Stack.Screen name="Blog" component={Blog} options={{ headerShown: false }}/>
-        <Stack.Screen name="Jewelery" component={Jewelery} options={{ headerShown: false }}/>
-        <Stack.Screen name="Electronic" component={Electronic} options={{ headerShown: false }}/>
-        <Stack.Screen name="Clothing" component={Clothing} options={{ headerShown: false }}/>
-        </>
+      <Stack.Navigator initialRouteName="WelcomeScreen">
+        <>
+      
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Products"
+          component={ProductsScreen}
+          
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Checkout"
+          component={Checkout}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Clothing"
+          component={ClothingScreen}
+          
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Electronic"
+          component={ElectronicScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Jewellery"
+          component={JewelleryScreen}
+          
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Locations"
+          component={LocationsScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Blog"
+          component={BlogScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Store"
+          component={StoreScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Productdetail"
+          component={Productdetail}
+        />
+      </>
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
-
+};
+export default App;

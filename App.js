@@ -5,15 +5,15 @@ import React from 'react';
 
 
 // Screens
-import ProductsScreen from "./Screens/productsScreen"
-import Checkout from "./Screens/checkoutScreen";
-import ElectronicScreen from "./Screens/ElectronicScreen";
-import JewelleryScreen from "./Screens/JewelleryScreen";
-import LocationsScreen from "./Screens/LocationsScreen";
-import ClothingScreen from "./Screens/ClothingScreen";
-import BlogScreen from "./Screens/BlogScreen";
-import StoreScreen from "./Screens/StoreScreen";
-import Productdetail from "./Screens/ProductdetailScreen";
+import Home from "./screens/HomeScreen";
+import Checkout from "./screens/CheckoutScreen";
+import ElectronicScreen from "./screens/ElectronicScreen";
+import JewelleryScreen from "./screens/JeweleryScreen";
+import LocationsScreen from "./screens/LocationScreen";
+import ClothingScreen from "./screens/ClothingScreen";
+import BlogScreen from "./screens/BlogScreen";
+import StoreScreen from "./screens/StoreScreen";
+import Productdetail from "./screens/ProductDetailsScreen";
 
 
 const Stack = createNativeStackNavigator();
@@ -27,8 +27,8 @@ function App() {
       
         <Stack.Screen
           options={{ headerShown: false }}
-          name="Products"
-          component={ProductsScreen}
+          name="Home"
+          component={Home}
           
         />
         <Stack.Screen

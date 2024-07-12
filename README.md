@@ -46,83 +46,10 @@ This workspace contains a React Native mobile application for shopping dresses. 
 
 ### Screenshots:
 
-- The README includes screenshots of the application, showcasing the empty checkout screen, checkout screen with orders, and the home screen displaying items.
+![alt text](photo_4_2024-07-12_21-04-35-1.jpg) 
+![alt text](photo_1_2024-07-12_21-04-35-1.jpg) 
+![alt text](photo_2_2024-07-12_21-04-35-1.jpg) 
+![alt text](photo_3_2024-07-12_21-04-35-1.jpg)
 
 In summary, this React Native shopping application aims to enhance the dress shopping experience for users by providing a visually appealing and user-friendly interface for browsing and purchasing dresses.
 
-# The user is viewing line 35 of the c:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377\App.js file, which is in the javascript language.
-
-```
-
-```
-
-# The user is on a Windows machine.
-
-# The last command and its output in the terminal is: `
-
-PS C:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377> npx expo start
-Starting project at C:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377
-Starting Metro Bundler
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█ ▄▄▄▄▄ █ ██▀▀█▀▄▀█ ▄▄▄▄▄ █
-█ █ █ █ ▀█ ▀█▀▄█ █ █ █
-█ █▄▄▄█ █▀ █▄▀▀▄██ █▄▄▄█ █
-█▄▄▄▄▄▄▄█▄█ ▀▄█▄█▄█▄▄▄▄▄▄▄█
-█▄ ▀▀ ▄▄█▀█▄█▄▀▄ ███ ▀▄▄ ▄█
-██ ███▀▄▀▀ ▄█▀██ ▀ █▄ ▀██
-█ ▄▄▀▀█▄▄▀▀▀▄▀█▄▀▄▀▄▀▀▄ ▀██
-███▀█▄█▄▀▄▀ ▄██ ▀ ▀ ▄ ▀███
-█▄▄██▄▄▄█ ▀█▄▀▄▀ ▄▄▄ ▀ ▄▄█
-█ ▄▄▄▄▄ █▀▄██▀█▀▀ █▄█ ▀▀▀▀█
-█ █ █ █▄▄▀▄▀▄ █ ▄ ▄▄▀ █
-█ █▄▄▄█ █▀ █ ▄ ▄▀█▀▄▀█▀▀ ██
-█▄▄▄▄▄▄▄█▄█▄█▄▄████▄▄▄▄▄▄▄█
-
-› Metro waiting on exp://172.20.10.3:8081
-› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
-
-› Using Expo Go
-› Press s │ switch to development build
-
-› Press a │ open Android
-› Press w │ open web
-
-› Press j │ open debugger
-› Press r │ reload app
-› Press m │ toggle menu
-› Press o │ open project code in your editor
-
-› Press ? │ show all commands
-
-Logs for your project will appear below. Press Ctrl+C to exit.
-iOS Bundled 5356ms C:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377\node_modules\expo\AppEntry.js (824 modules)
-ERROR TypeError: Cannot read property 'create' of undefined, js engine: hermes
-ERROR Invariant Violation: "main" has not been registered. This can happen if:
-
-- Metro (the local dev server) is run from the wrong folder. Check if Metro is running, stop it and restart it in the current project.
-- A module failed to load due to an error and `AppRegistry.registerComponent` wasn't called., js engine: hermes
-  error: SyntaxError: C:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377\App.js: Only one default export allowed per module. (35:0)
-
-  33 | }
-  34 |
-
-  > 35 | export default App
-
-       | ^
-
-  ERROR [Error: TransformError SyntaxError: C:\Users\Stan.STAN1-0\Desktop\Projects_VSCode\ReactNative\rn-assignment7-11253377\App.js: Only one default export allowed per module. (35:0)
-
-  33 | }
-  34 |
-
-  > 35 | export default App
-
-       | ^]
-
-  › Reloading apps
-  iOS Bundled 95ms
-  `
-
-# The current project is a git repository on branch: main
-
-# The following files have been changed since the last commit: app.json,components/productCard.js,package-lock.json,package.json,screens/homeScreen.js
